@@ -14,37 +14,46 @@
     <form>
       <div>
         <p>Size</p>
-        <input type="radio" id="size1" name="small" value="size">
-        <label for="size">Small</label><br>
-        <input type="radio" id="size2" name="medium" value="size">
-        <label for="size">Medium</label><br>
-        <input type="radio" id="size3" name="large" value="size">
-        <label for="size">Large</label><br> 
+        <label for="size">Select a size</label>
+        <select name="size" id="size-select">
+          <option value="">--Please choose an option--
+          </option>
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+        <br>
+      </div>
+      <div>
         <p>Sauces</p>
-        <input type="radio" id="sauce1" name="red" value="sauce">
-        <label for="sauce">Red sauce</label><br>
-        <input type="radio" id="sauce2" name="white" value="sauce">
-        <label for="sauce">White sauce</label><br>
+        <label for="sauces">Select a sauce</label>
+        <select name="sauce" id="sauce-select">
+          <option value="">--Please choose an option--
+          </option>
+          <option value="sauce">Red</option>
+          <option value="sauce">White</option>
+        </select>
+        <br>
+      </div>
         <p>Vegetables</p>
-        <input type="checkbox" id="topping1" name="topping1" value="toppings">
-        <label for="toppings">Bell peppers</label><br>
-        <input type="checkbox" id="topping2" name="topping2" value="toppings">
-        <label for="toppings">Mushrooms</label><br>
-        <input type="checkbox" id="topping3" name="topping3" value="toppings">
-        <label for="toppings">Olives</label><br>
+        <input type="checkbox" id="veg" name="veg1" value="veggies">
+        <label for="veggies">Bell peppers</label><br>
+        <input type="checkbox" id="veg2" name="veg2" value="veggies">
+        <label for="veggies">Mushrooms</label><br>
+        <input type="checkbox" id="veg3" name="veg3" value="veggies">
+        <label for="veggies">Olives</label><br>
         <p>Meats</p>
-        <input type="checkbox" id="topping4" name="topping4" value="toppings">
-        <label for="toppings">Chicken</label><br>
-        <input type="checkbox" id="topping5" name="topping5" value="toppings">
-        <label for="toppings">Sausage</label><br>
-        <input type="checkbox" id="topping6" name="topping6" value="toppings">
-        <label for="toppings">Pepperoni</label><br>
+        <input type="checkbox" id="meat1" name="meat1" value="Meats">
+        <label for="Meats">Chicken</label><br>
+        <input type="checkbox" id="meat2" name="meat2" value="Meats">
+        <label for="Meats">Sausage</label><br>
+        <input type="checkbox" id="meat3" name="meat3" value="Meats">
+        <label for="Meats">Pepperoni</label><br>
     </div>
     <div>
       <button type="submit">Submit</button>
     </div>
     </form>
-
   </div>
 </body>
 </html>
