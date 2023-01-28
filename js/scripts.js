@@ -2,26 +2,31 @@
 
 //Construct pizza
 
-function NewPizza(meat, veggies, size) {
+function MyPizza(size, veggies, meat) {
   this.sauce = sauce;
-  this.veggies = veggies;
-  this.meats = meat;
   this.size = size;
+  this.veggies = veggies;
+  this.meat = meat;
   this.price = 0;
-  console.log(NewPizza)
+  console.log("word")
 };
 
-NewPizza.prototype.veggiesSelected = function() {
-  this.price = this.price + (this.veggies.length + 3);
+let myPizza = new MyPizza(size,[veggies],[meat],price);
+
+MyPizza.prototype.veggiesSelected = function() {
+  this.price = this.price += (this.veggies.length * 3);
+  console.log(this.price)
   return this.price;
 };
 
-NewPizza.prototype.meat = function() {
-  this.price = this.price + (this.meat.length + 5);
+MyPizza.prototype.meat = function() {
+  this.price = this.price += (this.meat.length * 5);
+  console.log(this.price)
   return this.price;
+  
 };
 
-NewPizza.prototype.size = function() {
+MyPizza.prototype.size = function() {
   if (this.size === "small") {
     this.price += 12;
   } else if (this.size === "medium") {
@@ -29,8 +34,9 @@ NewPizza.prototype.size = function() {
   } else if (this.size === "large") {
     this.price += 20;
   }
+  console.log(this.price)
   return this.price;
-};
+  };
 
 
 
@@ -42,10 +48,9 @@ window.addEventListener("load", function pizzaOrder() {
   document.querySelector("form").onsubmit = function(event){
   event.preventDefault();
   
-
-  function pizzaForm() {
-  const NewPizza = 
-    document.querySelectorAll("form", meats, veggies, sauce, size).value
-  
-}
+  function pizzaPrice() { 
+    document.getElementById("price").innerText = pizzaPrice ;this.price.value;
+    return price
+      }
+    }
   });
