@@ -9,17 +9,6 @@ function getSize() {
   return selectedSize;
 }
 
-// function buildVeggieArray(veggies) {
-//   let numberSelected = 0;
-//   for (let i = 0; i < veggies.options.length, i++) {
-//     if (veggies.options[i].selected); {
-//       numberSelected++;
-//     }
-//   }
-//   return numberSelected;
-// };
-
-
   function buildVeggieArray() {
   let veggies = []
   let markedBox = document.querySelectorAll('input[name="veg"]:checked');
@@ -42,63 +31,62 @@ function getSize() {
   }
 
 
-function MyPizza(size, veggies, meat, sauce) {
-  this.sauce = sauce;
+function NewPizza(size, veggies, meat) {
   this.size = size;
   this.veggies = veggies;
   this.meat = meat;
-  this.price = 0;
-  console.log("word")
 };
 
 
 
   function pricePizza() {
-    MyPizza.prototype.veggies = function() {
-      this.price = this.price += (this.veggies.length * 3);
-    };
-    
-    MyPizza.prototype.meat = function() {
-      this.price = this.price += (this.meat.length * 5);
-    };
-    
-    MyPizza.prototype.size = function() {
-      if (this.size === "small") {
-        this.price += 12;
-      } else if (this.size === "medium") {
-        this.price += 16;
-      } else if (this.size === "large") {
-        this.price += 20;
+    NewPizza.prototype.price = function() {
+      let cost = 0
+      console.log(veggies.length)
+      cost += veggies.length * 3;
+      console.log(cost);
+      console.log(meat.length);
+      cost += meat.length * 5;
+      console.log(cost);
+        if (this.size === "Small") {
+          cost += 12;
+        } else if (this.size === "Medium") {
+          cost += 16;
+        } else if (this.size === "Large") {
+          cost += 20;
+        }
+        console.log(cost);
+        return cost;
       }
-    }
-  };
+    };
 
 
 
 //UI logic
 
 //Gather pizza information
+let selectedSize = ""
+  let veggies = []
+  let meat = []
+  let pizzaPrice = 0
 window.onload = function(){
   let form = document.querySelector('form');
   form.onsubmit = function(event){
     event.preventDefault();
-      getSize();
-      buildVeggieArray();
-      buildMeatArray();
-      let myPizza = new MyPizza(selectedSize,[veggies],[meat]);
-      pricePizza(myPizza);
+      selectedSize = getSize();
+      console.log(selectedSize)
+      veggies = buildVeggieArray();
+      meat = buildMeatArray();
+      let myPizza = new NewPizza(selectedSize,[veggies],[meat]);
+      console.log(myPizza);
+      pricePizza();
+      pizzaPrice = myPizza.price();
+      document.getElementById("Price").innerText = pizzaPrice
   }
+  form.onreset = function reset() {document.getElementById("pizza-form");
+  document.getElementById("Price").innerText = ""
+  }
+
 }
 
-// window.addEventListener("load", function(){
-//   document.querySelector("form").onsubmit = function(event)
-//   event.preventDefault()
-//     });
 
-  
-  // function pizzaPrice() { 
-  //   document.getElementById("price").innerText = pizzaPrice ;this.price.value;
-  //   return price
-  //     }
-  //   }
-  // });
