@@ -81,7 +81,7 @@ window.onload = function(){
       console.log(myPizza);
       pricePizza();
       pizzaPrice = myPizza.price();
-      document.getElementById("Price").innerText = pizzaPrice
+      document.getElementById("Price").innerText = "Your pizza will cost $" + pizzaPrice
   }
   form.onreset = function reset() {document.getElementById("pizza-form");
   document.getElementById("Price").innerText = ""
